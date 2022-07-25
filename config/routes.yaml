@@ -1,0 +1,23 @@
+#index:
+#    path: /
+#    controller: App\Controller\DefaultController::index
+
+crearPeli:
+    path: /crearPeli
+    controller: App\Controller\PeliculasController::crear
+
+editarPeli:
+    path: /editarPeli/{id}
+    controller: App\Controller\PeliculasController::editar
+    
+borrarPeli:
+    path: /borrarPeli/{id}
+    controller: App\Controller\PeliculasController::borrar
+
+alquilarPeli:
+    path: /alquilarPeli
+    controller: App\Controller\AlquilerController::crear
+
+alquiler:
+    path: /alquiler
+    controller: App\Controller\AlquilerController::crear

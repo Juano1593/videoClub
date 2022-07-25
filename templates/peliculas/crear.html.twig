@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello PeliculasController!{% endblock %}
+
+{% block body %}
+
+
+<div class="example-wrapper">
+    <h1>Agregar Películas</h1>
+
+    {{ form_start(form)}}
+    {{ form_widget(form) }}
+    {{ form_end(form) }}
+
+</div>
+
+<div>
+    <table id="tabla">
+        <tr id="">
+            <th>Nombre</th>
+            <th>Sinopsis</th>
+            <th>Precio Unitario</th>
+            <th>Tipo</th>
+            <th>Fecha Estheno</th>
+            <th>Categoria</th>
+            <th>Actions</th>
+        </tr>
+        {% for pelicula in peliculas %}
+        <tr>
+            <td>{{ pelicula.nombre }}</td>
+            <td>{{ pelicula.sinopsis }}</td>
+            <td>{{ pelicula.precioUnitario }}</td>
+            <td>{{ pelicula.tipo }}</td>
+            <td>{{ pelicula.fechaEstreno|date('d-m-Y') }}</td>
+            <td>{{ pelicula.categoria }}</td>
+            <td>
+                <a href="{{ path('editarPeli', {'id':pelicula.id}) }}">Editar</a>
+                <a href="{{ path('borrarPeli', {'id':pelicula.id}) }}">Eliminar</a>
+            </td>
+            
+        </tr>
+        {% endfor %}
+    </table>
+
+</div>
+{% endblock %}
